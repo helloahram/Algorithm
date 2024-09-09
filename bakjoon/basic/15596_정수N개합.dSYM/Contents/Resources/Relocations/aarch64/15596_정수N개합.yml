@@ -1,8 +1,0 @@
----
-triple:          'arm64-apple-darwin'
-binary-path:     "/Users/ahram/Desktop/Jungle/Algorithm/bakjoon/basic/15596_정수N개합"
-relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _sum, symObjAddr: 0x0, symBinAddr: 0x100003E74, symSize: 0x68 }
-  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _sum, symObjAddr: 0x0, symBinAddr: 0x100003E74, symSize: 0x68 }
-  - { offsetInCU: 0xA1, offset: 0xA1, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x68, symBinAddr: 0x100003EDC, symSize: 0x98 }
-...
