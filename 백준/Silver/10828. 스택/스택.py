@@ -14,8 +14,14 @@ def push(x):
     stack.append(x)
 
 def pop():
-    print(stack.pop() if stack else -1)
-    
+    # print(stack.pop() if stack else -1)
+    if stack:
+        lastpang = stack[-1]
+        del stack[-1]
+        print(lastpang)
+    else:
+        print(-1)
+
 def size():
     print(len(stack))
 
