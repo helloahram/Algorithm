@@ -27,7 +27,6 @@ def queen(i: int) -> None:
                 # 다음 시도에 방해되지 않도록 False 로 변경 
                 flaga[j] = flagb[i+j] = flagc[i-j+n-1] = False
 
-
 if __name__ == "__main__":
     # n * n 체스판의 크기 n 입력 받기
     n = int(input())
@@ -43,7 +42,6 @@ if __name__ == "__main__":
         flaga = [False] * n # 각 행에 퀸을 배치했는지 체크하는 배열 
         flagb = [False] * (2*n-1) # ↙↗ 대각선 방향에 퀸을 배치했는지 체크하는 배열
         flagc = [False] * (2*n-1) # ↘↖ 대각선 방향에 퀸을 배치했는지 체크하는 배열
-
 
         # 0 열부터 Queen 시작 
         queen(0)
