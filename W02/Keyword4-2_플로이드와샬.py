@@ -37,7 +37,7 @@ if __name__ == '__main__':
     ]
 
     # 플로이드 와샬 알고리즘 수행 
-    result = floyd_washall(n, graph)
+    result = floyd_warshall(n, graph)
 
     # 결과를 2차원 배열 형태로 출력 
     for row in result:
