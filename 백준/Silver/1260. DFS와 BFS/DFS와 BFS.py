@@ -1,3 +1,4 @@
+# https://helloahram.tistory.com/45 개념 정리 
 from collections import deque
 
 def dfs(graph, start):
@@ -11,6 +12,7 @@ def dfs(graph, start):
             print(v, end=' ')
             visited[v] = True
 
+            # 이웃 노드를 역순으로 스택에 추가 
             for neighbor in sorted(graph[v], reverse=True):
                 if not visited[neighbor]:
                     stack.append(neighbor)
@@ -26,6 +28,7 @@ def bfs(graph, start):
             print(v, end=' ')
             visited[v] = True
 
+            # 이웃 노드를 정렬하여 큐에 추가
             for neighbor in sorted(graph[v]):
                 if not visited[neighbor]:
                     queue.append(neighbor)
