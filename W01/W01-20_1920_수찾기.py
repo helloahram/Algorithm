@@ -22,26 +22,26 @@ def binarySearch(x, left, right, a):
 
 
 if __name__ == '__main__':
-    # n 배열의 크기, a n 개의 정수 배열 입력 받기 
-    n = int(input())
-    a = [int(i) for i in input().split()]
+    # # n 배열의 크기, a n 개의 정수 배열 입력 받기 
+    # n = int(input())
+    # a = [int(i) for i in input().split()]
 
-    # a 에 n 개의 정수가 입력되지 않으면 오류 발생
-    if len(a) != n:
-        raise ValueError(f"Expected {n} integers")
+    # # a 에 n 개의 정수가 입력되지 않으면 오류 발생
+    # if len(a) != n:
+    #     raise ValueError(f"Expected {n} integers")
 
-    # m 배열의 크기, arr m 개의 정수 배열 입력 받기 
-    m = int(input())
-    arr = [int(i) for i in input().split()]
+    # # m 배열의 크기, arr m 개의 정수 배열 입력 받기 
+    # m = int(input())
+    # arr = [int(i) for i in input().split()]
 
-    # arr 에 m 개의 정수가 입력되지 않으면 오류 발생
-    if len(arr) != m:
-        raise ValueError(f"Expected {m} integers")
+    # # arr 에 m 개의 정수가 입력되지 않으면 오류 발생
+    # if len(arr) != m:
+    #     raise ValueError(f"Expected {m} integers")
     
-    # n = 5
-    # a = [5, 1, 4, 2, 3]
-    # m = 5
-    # arr = [1, 3, 7, 5, 9]
+    n = 5
+    a = [5, 1, 4, 2, 3]
+    m = 5
+    arr = [1, 3, 7, 5, 9]
 
     # a 배열을 이분 탐색으로 나누기 전에 먼저 오름차순 정렬부터 하기
     a.sort()
