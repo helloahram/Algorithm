@@ -1,0 +1,8 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     "/Users/ahram/Desktop/Jungle/Algorithm/After/10_1193_분수찾기"
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _find_fraction, symObjAddr: 0x0, symBinAddr: 0x100003DF8, symSize: 0x144 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _find_fraction, symObjAddr: 0x0, symBinAddr: 0x100003DF8, symSize: 0x144 }
+  - { offsetInCU: 0xAB, offset: 0xAB, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x144, symBinAddr: 0x100003F3C, symSize: 0x48 }
+...
