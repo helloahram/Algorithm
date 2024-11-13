@@ -1,15 +1,14 @@
 #include <stdio.h>
-
-int sum(int a, int b); // 함수 정의
-
+#include <stdlib.h>
 int main()
 {
-    printf("%d\n", sum(1, 2));
-}
-
-int sum(int a, int b) // 함수 선언
-{
-    int result;
-    result = a + b;
-    return result;
+    int *arr = (int *)malloc(5 * sizeof(int));
+    for (int i = 0; i < 5; i++)
+    {
+        arr[i] = i * i;
+    }
+    printf("%d\n", arr[3]);
+    // start of code ....
+    // end of code
+    return 0;
 }

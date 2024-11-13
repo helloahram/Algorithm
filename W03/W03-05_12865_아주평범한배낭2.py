@@ -1,3 +1,5 @@
+# 참고 https://studyiwthme.tistory.com/158
+
 def knapsack(items, K):
     dp = [0] * (K + 1)
 
