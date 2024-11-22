@@ -10,4 +10,15 @@
 #     return sum;
 # }
 
-# 모르겠다아
+# k 는 j+1 부터 n 까지, n-j
+# j 는 i+1 부터 n-1 까지, n-i-1
+# i 는 1부터 n-2 까지
+# 이 구조는 1부터 n까지 숫자 중 3개를 선택하는 조합의 수와 같다 
+
+n = int(input())
+
+execution = ((n * (n-1) * (n-2)) // 6)
+degree = 3
+
+print(execution)
+print(degree)
