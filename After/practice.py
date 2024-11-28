@@ -1,14 +1,12 @@
-from itertools import combinations
+n = int(input())
+count = 0
 
-n, m = map(int, input().split())
-while True:
-    cards = list(map(int, input().split()))
-    if len(cards) == n: break
-
-max_sum = 0
-for combo in combinations(cards, 3):    
-    s = sum(combo)
-    if s <= m:
-        max_sum = max(max_sum, s)
-
-print(max_sum)
+while n >= 0:
+    if n % 5 == 0:
+        count += n // 5
+        print(count)
+        break
+    n -= 3
+    count += 1
+else:
+    print(-1)
