@@ -1,16 +1,10 @@
-# 좌표 크기 기준으로 0 부터 번호 매기기 
-
-# 정렬 리스트를 만들어서 정렬을 해주고
-# 매칭해주면 되지!
+# 가지고 있는 숫자이면 1, 아니면 0 출력 
 
 n = int(input())
+old_cards = set(map(int, input().split()))
+m = int(input())
+new_cards = list(map(int, input().split()))
 
-points = list(map(int, input().split()))
+result = [1 if q in old_cards else 0 for q in new_cards]
 
-sorted_point = sorted(set(points))
-
-compress_map = {value: index for index, value in enumerate(sorted_point)}
-
-compress_points = [compress_map[point] for point in points]
-
-print(' '.join(map(str, compress_points)))
+print(' '.join(map(str, result)))

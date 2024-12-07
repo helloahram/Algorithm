@@ -22,4 +22,4 @@ compress_points = [compress_map[point] for point in points]
 # 결과를 공백으로 구분하여 출력 
 print(' '.join(map(str, compress_points)))
 
-# 나중에 꼭 다시 해 보기 
+# 나중에 꼭 다시 해 보기!
