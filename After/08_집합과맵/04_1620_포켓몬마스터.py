@@ -24,7 +24,7 @@ for _ in range(m):
     if question.isdigit(): # 숫자인 경우 
         result.append(pokemon[int(question)])
     else:
-        result.append(reverse_pokemon[question])
+        result.append(str(reverse_pokemon[question]))
 
 # 줄바꿈으로 출력 
 print('\n'.join(result))

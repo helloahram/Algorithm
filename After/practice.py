@@ -1,15 +1,20 @@
-n = int(input())
+n, m = map(int, input().split())
 
-people = {}
+pokemon_list = {}
+reversed_list = {}
+result = []
 
-for _ in range(n):
-    event = input().strip()
-    name, action = event.split()
+for i in range(n):
+    monster = input().strip()
+    pokemon_list[i+1] = monster
+    reversed_list[monster] = i+1
 
-    if action == 'enter':  
-        people[name] = True
-    elif action == 'leave':
-        del people[name]
+for _ in range(m):
+    question = input().strip()
 
-for name in sorted(people.keys(), reverse=True):
-    print(name)
+    if question.isdigit():
+        result.append(pokemon_list[int(question)])
+    else:
+        result.append(str(reversed_list[question]))
+
+print('\n'.join(result))
