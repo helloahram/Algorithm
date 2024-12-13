@@ -1,20 +1,12 @@
-n, m = map(int, input().split())
+import sys
+from collections import Counter
 
-pokemon_list = {}
-reversed_list = {}
-result = []
+n = int(input())
+old_cards = list(map(int, input().split()))
+m = int(input())
+new_cards = list(map(int, input().split()))
 
-for i in range(n):
-    monster = input().strip()
-    pokemon_list[i+1] = monster
-    reversed_list[monster] = i+1
+card_count = Counter(old_cards)
 
-for _ in range(m):
-    question = input().strip()
-
-    if question.isdigit():
-        result.append(pokemon_list[int(question)])
-    else:
-        result.append(str(reversed_list[question]))
-
-print('\n'.join(result))
+result = (str(card_count[card]) for card in new_cards)
+sys.stdout.write(" ".join(result)+'\n')
