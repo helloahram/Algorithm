@@ -4,6 +4,7 @@
 # 1 <= N <= 1,000,000, 시간 제한 2초 메모리 제한 256MB
 
 import sys
+# input = lambda: sys.stdin.readline().strip()
 
 n = int(input()) # 입력 받을 숫자의 개수 
 numbers = [] # 입력 받을 숫자를 저장할 배열 

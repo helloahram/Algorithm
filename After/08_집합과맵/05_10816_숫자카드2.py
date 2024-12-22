@@ -4,6 +4,9 @@
 # 이 수가 적혀있는 숫자 카드를 몇 개 가지고 있는지 구하는 문제 
 # 10,000,000 <= 숫자 <= 10,000,000
 
+# Counter 를 활용하여 카드의 갯수를 계산하고
+# new_cards 에서 확인하기 
+
 from collections import Counter
 import sys
 
@@ -19,5 +22,3 @@ card_count = Counter(old_cards)
 result = (str(card_count[card]) for card in new_cards)
 # " " 로 구분하여 출력 
 sys.stdout.write(" ".join(result) + "\n")
-
-# 내일 다시 보기 
