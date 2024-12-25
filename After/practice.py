@@ -1,10 +1,8 @@
-n = int(input())
+str = input().strip()
+sub_str = set()
 
-# 정렬할 수를 담음
-num_list = []
+for i in range(len(str)):
+    for j in range(i+1, len(str)+1):
+        sub_str.add(str[i:j])
 
-for i in range(n):
-    num_list.append(int(input()))
-num_list.sort()
-
-print(*num_list)
+print(len(sub_str))
