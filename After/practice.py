@@ -1,8 +1,13 @@
-str = input().strip()
-sub_str = set()
+import math
+from functools import reduce
 
-for i in range(len(str)):
-    for j in range(i+1, len(str)+1):
-        sub_str.add(str[i:j])
+n = int(input())
+m = [int(input()) for _ in range(n)]
 
-print(len(sub_str))
+distances = [m[i+1] - m[i] for i in range(n-1)]
+
+gcd = reduce(math.gcd, distances)
+
+trees_to_add = sum((dist//gcd-1) for dist in distances)
+
+print(trees_to_add)
