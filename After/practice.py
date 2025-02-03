@@ -1,24 +1,27 @@
-import sys
-import math 
+import math
+import sys 
 
-def is_prime(x):
-    if x < 2:
-        return False
-    for i in range(2, int(math.sqrt(x))+1):
-        if x % i == 0:
-            return False
-    return True
+def eratosthenes(m):
+    n = m*2
+    is_prime = [False, False] + [True]*(n+1)
 
-def find_next_prime(n):
-    while not is_prime(n):
-        n += 1
-    return n
+    for i in range(2, int(math.sqrt(n))+1):
+        if is_prime[i]:
+            for j in range(i*i, n+1, i):
+                is_prime[j] = False
 
-result = []
+    count = 0
+    for i in range(m+1, n+1):
+        if is_prime[i]:
+            count += 1
 
-x = int(input())
-for i in range(x):
-    n = int(sys.stdin.readline().strip())
-    result.append(str(find_next_prime(n)))
+    return count 
 
-sys.stdout.write("\n".join(result)+"\n")
+if __name__ == '__main__':
+    result = []
+    while(True):
+        n = int(sys.stdin.readline().strip())
+        if n == 0:
+            break
+        result.append(str(eratosthenes(n)))
+    sys.stdout.write('\n'.join(result)+'\n')
