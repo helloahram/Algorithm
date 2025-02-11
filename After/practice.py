@@ -1,27 +1,46 @@
 import math
 import sys 
 
-def eratosthenes(m):
-    n = m*2
-    is_prime = [False, False] + [True]*(n+1)
+def push(stack, x):
+    stack.append(x)
+    return stack
+    
+def pop(stack):
+    if stack:
+        print(stack[-1])
+        stack.pop()
+    else:
+        print("-1")
+    
+def length(stack):
+    print(len(stack))
 
-    for i in range(2, int(math.sqrt(n))+1):
-        if is_prime[i]:
-            for j in range(i*i, n+1, i):
-                is_prime[j] = False
+def is_empty(stack):
+    if stack:
+        print("0")
+    else:
+        print("1")
 
-    count = 0
-    for i in range(m+1, n+1):
-        if is_prime[i]:
-            count += 1
-
-    return count 
+def peek(stack):
+    if stack:
+        print(stack[-1])
+    else:
+        print("-1")
 
 if __name__ == '__main__':
-    result = []
-    while(True):
-        n = int(sys.stdin.readline().strip())
-        if n == 0:
-            break
-        result.append(str(eratosthenes(n)))
-    sys.stdout.write('\n'.join(result)+'\n')
+    n = int(input())
+    stack = []
+
+    for i in range(n):
+        c = sys.stdin.readline().split()
+        
+        if c[0] == '1':
+            push(stack, int(c[1]))
+        elif c[0] == '2':
+            pop(stack)
+        elif c[0] == '3':
+            length(stack)
+        elif c[0] == '4':
+            is_empty(stack)
+        elif c[0] == '5':
+            peek(stack)
