@@ -1,46 +1,20 @@
-import math
-import sys 
-
-def push(stack, x):
-    stack.append(x)
-    return stack
-    
-def pop(stack):
-    if stack:
-        print(stack[-1])
-        stack.pop()
-    else:
-        print("-1")
-    
-def length(stack):
-    print(len(stack))
-
-def is_empty(stack):
-    if stack:
-        print("0")
-    else:
-        print("1")
-
-def peek(stack):
-    if stack:
-        print(stack[-1])
-    else:
-        print("-1")
-
-if __name__ == '__main__':
-    n = int(input())
+def is_vps(s):
     stack = []
 
-    for i in range(n):
-        c = sys.stdin.readline().split()
-        
-        if c[0] == '1':
-            push(stack, int(c[1]))
-        elif c[0] == '2':
-            pop(stack)
-        elif c[0] == '3':
-            length(stack)
-        elif c[0] == '4':
-            is_empty(stack)
-        elif c[0] == '5':
-            peek(stack)
+    for char in s:
+        # ( 이면 Stack 에 추가하기 
+        if char == '(':
+            stack.append(char)
+        elif char == ')':
+            # Stack 이 비어 있지 않으면 짝을 맞추기 위해 Pop
+            if stack:
+                stack.pop()
+            # Stack 이 비어 있는데 ) 가 나오면 VPS 아님
+            else:
+                return "NO"
+    return "YES" if not stack else "NO"
+
+t = int(input())
+for _ in range(t):
+    bracket = input().strip()
+    print(is_vps(bracket))
