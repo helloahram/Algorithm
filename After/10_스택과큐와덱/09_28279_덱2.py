@@ -16,13 +16,16 @@
 # 8: 덱에 정수가 있다면 맨 뒤의 정수를 출력한다. 
 #    없다면 -1을 대신 출력한다.
 
+# 시간 초과 떠서 sys.stdin.readline 으로 변경
+
 from collections import deque
+import sys
 
 queue = deque()
 
 n = int(input())
 for _ in range(n):
-    c = input().split()
+    c = sys.stdin.readline().split()
 
     if c[0] == '1':
         queue.appendleft(int(c[1]))
