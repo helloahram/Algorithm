@@ -1,20 +1,19 @@
-def is_vps(s):
-    stack = []
-    bracket_map = {')':'(', ']':'['}
+from collections import deque
 
-    for char in s:
-        if char in '([':
-            stack.append(char)
-        elif char in ')]':
-            if not stack or stack[-1] != bracket_map[char]:
-                return "NO"
-            stack.pop()
+n = int(input())
+balloon = deque(enumerate(map(int, (input().split())), start=1))
+result = []
 
-    return "YES" if not stack else "NO"
+num, move = balloon.popleft()
+result.append(num)
 
+while balloon:
+    if move > 0:
+        balloon.rotate(-(move-1))
+    else:
+        balloon.rotate(-move)
 
-while True:
-    line = input()
-    if line == '.':
-        break
-    print(is_vps(line))
+    num, move = balloon.popleft()
+    result.append(num)
+
+print(*result)
