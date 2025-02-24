@@ -15,9 +15,8 @@
 
 # queuestack 은 queue or stack 으로 이루어진 자료 구조
 # 각각의 자료 구조에는 처음에 하나의 원소가 들어 있고 
-# 새로운 원소가 삽입될 때 저렇게 동작한다
-
-#* 시간 초과 떴다 
+# 새로운 원소가 삽입될 때 저렇게 동작한다 
+# Stack 에 넣는 건 의미 없으므로 Queue 만 고려 
 
 from collections import deque
 import sys 
@@ -29,25 +28,16 @@ m = int(sys.stdin.readline().strip()) # 삽입할 수열의 길이
 c = list(map(int, sys.stdin.readline().split())) # queuestack 에 삽입할 원소
 
 queue = deque()
-structures = [] # 자료 구조를 저장할 리스트 (Q, S, ..)
 results = [] # 결과를 저장할 리스트 
 
-# Init Queuestack 
+# Init Queuestack, Queue 인 경우에만 값 넣기 
 for i in range(n):
-    if a[i] == 0: # Queue 리스트 [] 로 초기화
-        structures.append(deque([b[i]]))
-    else: # Stack 리스트 [] 로 초기화
-        structures.append([b[i]])
+    if a[i] == 0: 
+        queue.appendleft(b[i])
 
 for value in c:
-    x = value
-    for i in range(n):
-        if a[i] == 0: # Queue FIFO
-            structures[i].append(x)
-            x = structures[i].popleft()
-        else: # Stack LIFO
-            structures[i].append(x)
-            x = structures[i].pop()
-    results.append(x)
+    queue.append(value) # 새 값을 Queue 에 넣는다 
+    # Queue 의 맨 앞 값을 빼서 result 에 추가한다 
+    results.append(queue.popleft())
 
 sys.stdout.write(" ".join(map(str, results)) + "\n")
